@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+/* ==========================
+   Light Mode
+========================== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Typography */
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Open Sans', 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Poppins', var(--font-heading);
+
+  /* Primary (#212121) */
+  --color-secondary-100: #e5e5e5;
+  --color-secondary-200: #bfbfbf;
+  --color-secondary-300: #999999;
+  --color-secondary-400: #737373;
+  --color-secondary-500: #4d4d4d;
+  --color-secondary-600: #383838;
+  --color-secondary-700: #212121; /* original */
+  --color-secondary-800: #1a1a1a;
+  --color-secondary-900: #0d0d0d;
+
+  /* Success (#469175) */
+  --color-primary-100: #daf2e8;
+  --color-primary-200: #b6e3d1;
+  --color-primary-300: #91d5b9;
+  --color-primary-400: #6cc79f;
+  --color-primary-500: #47b886;
+  --color-primary-600: #469175; /* original */
+  --color-primary-700: #35715a;
+  --color-primary-800: #126942;
+  --color-primary-900: #03301e;
+
+  /* Text (#627884) */
+  --color-text-100: #dce3e8;
+  --color-text-200: #b3c1cc;
+  --color-text-300: #8aa0b0;
+  --color-text-400: #618096;
+  --color-text-500: #476877;
+  --color-text-600: #627884; /* original */
+  --color-text-700: #4a5a64;
+  --color-text-800: #323d44;
+  --color-text-900: #191f22;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ==========================
+   Body Styles
+========================== */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
