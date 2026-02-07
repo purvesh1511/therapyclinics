@@ -14,7 +14,7 @@ export default async function TrendingSpeciality() {
         </h2>
 
         <div className="flex flex-wrap justify-center gap-9">
-          {healthSpecialties.map((concern, index) => (
+          {healthSpecialties.map((concern: any, index: number) => (
             <div
               key={index}
               className="flex flex-col items-center w-24"

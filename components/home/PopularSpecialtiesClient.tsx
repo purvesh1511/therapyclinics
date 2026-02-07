@@ -69,7 +69,7 @@ export default function PopularSpecialtiesClient({ popularSpecialities }: Props)
                           duration-150
                         "
                       >
-                        {item.homepage_popular_sub_items.map((sub) => (
+                        {item.homepage_popular_sub_items.map((sub: any) => (
                           <DropdownMenuItem key={sub.id} asChild>
                             <Link
                               href={`/${sub.directory_services.slug}`}

@@ -12,7 +12,7 @@ export default async function TrendingHealth() {
         </h2>
 
         <div className="flex flex-wrap justify-center gap-8">
-          {healthConcerns.map((concern) => (
+          {healthConcerns.map((concern: any) => (
             <div key={concern.id} className="flex flex-col items-center w-24">
               <Image
                 src={concern.image_url}
