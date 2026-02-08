@@ -4,16 +4,15 @@ import { getHomepageSpecialties } from "@/lib/getHomepageSpecialties";
 
 
 export default async function TrendingSpeciality() {
-  const healthSpecialties = await getHomepageSpecialties()
-  console.log(healthSpecialties)
+  const healthSpecialties = await getHomepageSpecialties();
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-100 mb-8">
-          Trending health concerns
+        <h2 className="text-4xl md:text-4xl font-semibold text-gray-900 dark:text-gray-100 mb-15">
+          Trending specialities
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-9">
+        <div className="flex flex-wrap justify-center gap-9 mb-10">
           {healthSpecialties.map((concern: any, index: number) => (
             <div
               key={index}

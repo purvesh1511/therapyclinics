@@ -38,11 +38,11 @@ export default function Header() {
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
             <Link
-              href="#signup"
+              href="/partners"
               className="hidden md:inline-flex items-center rounded-full px-6 py-2 font-medium text-white shadow-lg transition-all duration-300
                          bg-[var(--color-primary-700)] hover:bg-[var(--color-primary-600)]"
             >
-              Get Started
+              List your practice
             </Link>
           </div>
         </div>

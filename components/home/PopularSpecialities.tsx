@@ -13,15 +13,15 @@ export default async function PopularSpecialties() {
     <section className="bg-[var(--color-primary-600)] text-white py-12 px-4">
       <div className="max-w-7xl mx-auto space-y-12">
         <div>
-          <PopularSpecialtiesClient popularSpecialities={popularSpecialities} />
+          <PopularSpecialtiesClient popularSpecialities={popularSpecialities} titleName="Popular Specialities" />
         </div>
         <hr className="border-[var(--color-primary-500)]" />
         <div>
-          <PopularSpecialtiesClient popularSpecialities={popularCondition} />
+          <PopularSpecialtiesClient popularSpecialities={popularCondition} titleName="Popular conditions" />
         </div>
         <hr className="border-[var(--color-primary-500)]" />
         <div>
-          <PopularSpecialtiesClient popularSpecialities={popularTherapies} />
+          <PopularSpecialtiesClient popularSpecialities={popularTherapies} titleName="Popular therapies / treatments" />
         </div>
       </div>
     </section>

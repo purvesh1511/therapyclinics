@@ -1,56 +1,267 @@
 @import "tailwindcss";
 
 /* ==========================
-   Light Mode
+   Design Tokens (Light Mode)
 ========================== */
 :root {
+  /* Core surfaces */
   --background: #ffffff;
   --foreground: #171717;
+  --surface-muted: #f6f3ed;
+  --surface-dark: #212121;
 
   /* Typography */
   --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
   --font-body: 'Open Sans', 'Segoe UI', Roboto, sans-serif;
   --font-accent: 'Poppins', var(--font-heading);
+  --font-serif: 'EB Garamond', Georgia, serif;
 
-  /* Primary (#212121) */
+  /* Neutral / Secondary */
   --color-secondary-100: #e5e5e5;
-  --color-secondary-200: #bfbfbf;
-  --color-secondary-300: #999999;
+  --color-secondary-200: #faf9f5;
+  --color-secondary-300: #efede7;
   --color-secondary-400: #737373;
   --color-secondary-500: #4d4d4d;
   --color-secondary-600: #383838;
-  --color-secondary-700: #212121; /* original */
+  --color-secondary-700: #212121;
   --color-secondary-800: #1a1a1a;
   --color-secondary-900: #0d0d0d;
 
-  /* Success (#469175) */
+  /* Primary (Success Green) */
   --color-primary-100: #daf2e8;
   --color-primary-200: #b6e3d1;
   --color-primary-300: #91d5b9;
   --color-primary-400: #6cc79f;
   --color-primary-500: #47b886;
-  --color-primary-600: #469175; /* original */
+  --color-primary-600: #469175;
   --color-primary-700: #35715a;
   --color-primary-800: #126942;
   --color-primary-900: #03301e;
 
-  /* Text (#627884) */
+  /* Text */
   --color-text-100: #dce3e8;
   --color-text-200: #b3c1cc;
   --color-text-300: #8aa0b0;
   --color-text-400: #618096;
   --color-text-500: #476877;
-  --color-text-600: #627884; /* original */
+  --color-text-600: #627884;
   --color-text-700: #4a5a64;
   --color-text-800: #323d44;
   --color-text-900: #191f22;
+
+  /* Borders */
+  --border-default: var(--color-secondary-200);
 }
 
 /* ==========================
-   Body Styles
+   Base Styles
 ========================== */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ebgaramond/v32/SlGWmQSNjdsmc35JDF1K5GRweDY1ZzPJ.woff2')
+    format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF,
+    U+A640-A69F, U+FE2E-FE2F;
+}
+
 body {
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--color-secondary-700);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+
+.font-weight-100{
+  font-weight: 100;
+}
+.font-weight-200{
+  font-weight: 200;
+}
+.font-weight-300{
+  font-weight: 300;
+}
+.font-weight-400{
+  font-weight: 400;
+}
+.font-weight-500{
+  font-weight: 500;
+}
+.font-weight-600{
+  font-weight: 600;
+}
+.font-weight-700{
+  font-weight: 700;
+}
+.font-weight-800{
+  font-weight: 800;
+}
+.font-weight-900{
+  font-weight: 900;
+}
+.font-bold{
+  font-weight: 600;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+.font-arial{
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 100;
+}
+
+p {
+  color: var(--color-text-600);
+}
+
+/* ==========================
+   Semantic Utility Classes
+========================== */
+.bg-surface {
+  background-color: var(--background);
+}
+
+.bg-muted {
+  background-color: var(--surface-muted);
+}
+.bg-primary-100 {
+  background-color: var(--color-primary-100);
+}
+.bg-primary-200 {
+  background-color: var(--color-primary-200);
+}
+.bg-primary-300 {
+  background-color: var(--color-primary-300);
+}
+.bg-primary-300 {
+  background-color: var(--color-primary-300);
+}
+.bg-primary-400 {
+  background-color: var(--color-primary-400);
+}
+.bg-primary-500 {
+  background-color: var(--color-primary-500);
+}
+.bg-primary-600 {
+  background-color: var(--color-primary-600);
+}
+.bg-primary-700 {
+  background-color: var(--color-primary-700);
+}
+.bg-primary-800 {
+  background-color: var(--color-primary-800);
+}
+.bg-primary-900 {
+  background-color: var(--color-primary-900);
+}
+
+.bg-primary {
+  background-color: var(--color-primary-600);
+}
+.bg-primary-hover {
+  background-color: var(--color-primary-500);
+}
+
+.bg-gray-100 {
+  background-color: var(--color-secondary-100);
+}
+.bg-gray-200 {
+  background-color: var(--color-secondary-200);
+}
+.bg-gray-300 {
+  background-color: var(--color-secondary-300);
+}
+
+.bg-dark {
+  background-color: var(--color-secondary-700);
+}
+
+.text-primary {
+  color: var(--color-primary-600);
+}
+
+.text-white {
+  color: var(--color-secondary-100);
+}
+.text-secondary-foreground {
+  color: var(--color-secondary-600);
+}
+.text-muted {
+  color: var(--color-text-600);
+}
+
+.text-dark {
+  color: var(--color-secondary-800);
+}
+
+.border-default {
+  border-color: var(--border-default);
+}
+
+/* ==========================
+   Buttons
+========================== */
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-primary-600);
+  color: var(--color-primary-600);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-100);
+}
+
+/* ==========================
+   Cards / Sections
+========================== */
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border-default);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section--muted {
+  background-color: var(--surface-muted);
+}
+
+.section--primary {
+  background-color: var(--color-primary-600);
+  color: #ffffff;
+}
+
+.section--primary h1,
+.section--primary h2,
+.section--primary p {
+  color: #ffffff;
+}
+
+.focus\:ring-blue-500:focus {
+    --tw-ring-color: var(--color-primary-500);
 }

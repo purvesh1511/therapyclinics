@@ -7,7 +7,7 @@ export default async function TrendingHealth() {
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-8">
+        <h2 className="text-4xl md:text-4xl font-semibold mb-15">
           Trending health concerns
         </h2>
 

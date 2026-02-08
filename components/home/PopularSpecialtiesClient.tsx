@@ -13,15 +13,17 @@ import {
 
 interface Props {
   popularSpecialities: any[];
+  titleName: string;
 }
 
-export default function PopularSpecialtiesClient({ popularSpecialities }: Props) {
+
+export default function PopularSpecialtiesClient({ popularSpecialities, titleName }: Props) {
   return (
     <section className="bg-[var(--color-primary-600)] text-white">
       <div className="max-w-7xl mx-auto space-y-12 px-4">
         <div>
-          <h2 className="mb-4 text-lg font-medium">
-            Popular Specialities
+          <h2 className="mb-4 text-2xl font-medium">
+            {titleName}
           </h2>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -37,11 +39,11 @@ export default function PopularSpecialtiesClient({ popularSpecialities }: Props)
                         <Button
                           variant="outline"
                           className="
-                            group w-full justify-between rounded-lg
-                            bg-white px-4 py-2
-                            text-[var(--color-primary-700)] font-medium
+                            group w-full rounded-lg
+                            bg-white px-5 py-7
+                            text-[var(--color-secondary-700)] font-weight-700 font-medium
                             transition-all duration-200
-                            hover:bg-white hover:shadow-lg
+                            hover:bg-white hover:shadow-lg border-0 whitespace-normal
                           "
                         >
                           {item.name}
@@ -66,7 +68,7 @@ export default function PopularSpecialtiesClient({ popularSpecialities }: Props)
                           data-[state=closed]:animate-out
                           data-[state=closed]:fade-out
                           data-[state=closed]:zoom-out-95
-                          duration-150
+                          duration-150 border-0
                         "
                       >
                         {item.homepage_popular_sub_items.map((sub: any) => (
@@ -77,7 +79,7 @@ export default function PopularSpecialtiesClient({ popularSpecialities }: Props)
                                 w-full rounded-md px-4 py-2 text-sm
                                 font-medium text-gray-700
                                 transition-colors
-                                hover:bg-gray-100
+                                hover:bg-gray-100 border-0
                               "
                             >
                               {sub.directory_services.name}
@@ -90,10 +92,10 @@ export default function PopularSpecialtiesClient({ popularSpecialities }: Props)
                     <Button
                       variant="outline"
                       className="
-                        w-full rounded-lg bg-white px-4 py-2
-                        text-[var(--color-primary-700)] font-medium
+                        w-full rounded-lg bg-white px-4 py-6
+                        text-[var(--color-secondary-700)] font-weight-700 font-medium
                         transition-all duration-200
-                        hover:bg-white hover:shadow-lg
+                        hover:bg-white hover:shadow-lg border-0
                       "
                     >
                       {item.name}
